@@ -125,5 +125,17 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+        
+        intent = new Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://developer.android.com/guide")
+        );
+
+        Intent chooser = Intent.createChooser(intent, "chooser title");
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(chooser);
+        }
+
     }
 }
